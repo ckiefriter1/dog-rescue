@@ -1,0 +1,16 @@
+spring:
+  # This section contains the database (schema) login credentials.
+  datasource:
+    username: dog_rescue
+    password: dog_rescue
+    url: jdbc:mysql://localhost:3306/dog_rescue
+  
+  jpa:
+    hibernate:
+      ddl-auto: none   # Tells Hibernate to not create the tables
+    show-sql: true     # Spring JPA logs the SQL statements
+  
+  sql:
+    init:
+      mode: always     # Set to "always" to have Spring JPA create the tables
+      
