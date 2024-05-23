@@ -51,3 +51,13 @@ INSERT INTO breed (name) VALUES ('Australian Terrier');
 INSERT INTO breed (name) VALUES ('Papillon');
 INSERT INTO breed (name) VALUES ('Cairn Terrier');
 INSERT INTO breed (name) VALUES ('Silky Terrier');
+
+-- insert into location (business_name, street_address, city, state, zip, phone)
+--             values ("Dog R Us", "1519 Saddle Court", "Clearwater", "FL", "36082", "727-772-4567");
+-- insert into location (business_name, street_address, city, state, zip, phone)
+--            values ("Too Many Dogs", "1519 Saddle Court", "Clearwater", "FL", "36082", "727-772-4567");
+-- insert into location (business_name, street_address, city, state, zip, phone)
+--            values ("Crazy Dogs", "1519 Saddle Court", "Clearwater", "FL", "36082", "727-772-4567");
+-- insert into location (business_name, street_address, city, state, zip, phone)
+--            values ("Barking dogs", "1519 Saddle Court", "Clearwater", "FL", "36082", "727-772-4567");
+

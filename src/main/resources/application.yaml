@@ -7,7 +7,7 @@ spring:
   
   jpa:
     hibernate:
-      ddl-auto: none   # Tells Hibernate to not create the tables
+      ddl-auto: update   # Tells Hibernate to not create the tables
     show-sql: true     # Spring JPA logs the SQL statements
   
   sql:

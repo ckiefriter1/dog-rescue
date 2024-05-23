@@ -2,6 +2,8 @@
 
 package dog.rescue.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
@@ -249,4 +251,35 @@ public class RescueService {
     Location location = findLocationById(locationId);
     locationDao.delete(location);
   }
+
+  /*
+   * Retrieve all dogs at a given location.
+   */
+  public List<DogInfo> retrieveAllDogsAtLocation(Long locationId) {
+	
+	List<Dog> fullDogList = dogDao.findAll();
+	List<Dog> filteredDogList = new ArrayList<Dog>();
+	
+	/*
+	 * Query all dogs and filter out dogs for only the chosen location.
+	 */
+	Iterator<Dog> listIterator = fullDogList.iterator();
+	while (listIterator.hasNext()) {
+		Dog d = listIterator.next();
+		if (d.getLocation().getLocationId() == locationId) {
+			filteredDogList.add(d);
+		}
+	}
+	
+	List<DogInfo> dl = new ArrayList<DogInfo>();
+	Iterator<Dog> i = filteredDogList.iterator();
+	while (i.hasNext()) {
+		DogInfo di = new DogInfo(i.next());
+		di.setLocation(null);
+		dl.add(di);
+	}
+	
+	return dl;
+
+}
 }

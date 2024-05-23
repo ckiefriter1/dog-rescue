@@ -53,7 +53,7 @@ public class RescueController {
     return rescueService.saveLocation(locationData);
   }
 
-  /**
+ /**
    * This method modifies a dog rescue location. The location data is formatted
    * as JSON. It is passed in the HTTP request payload. To call this method,
    * send a PUT HTTP request to http://localhost:8080/dog_rescue/location/{ID}
@@ -96,6 +96,23 @@ public class RescueController {
   public List<LocationData> retrieveAllLocations() {
     log.info("Retrieving all locations");
     return rescueService.retrieveAllLocations();
+  }
+
+  /**
+   * Add a dog to a location. To call this method, send an HTTP POST request to
+   * http://localhost:8080/dog_rescue/location/{locationID}/dog where
+   * {locationId} is the location ID.
+   * 
+   * @param locationId The ID of the location in which to add a dog. This is
+   *        passed in the URI as described above.
+   * @param dogInfo The dog information. This is passes as JSON in the request
+   *        body.
+   * @return List of all dogs at a given location.
+   */
+  @GetMapping("/location/{locationId}/dog")
+  public List<DogInfo> retrieveAllDogsAtLocation(@PathVariable Long locationId) {
+    log.info("Retrieving all the dogs at a given location: ", locationId);
+    return rescueService.retrieveAllDogsAtLocation(locationId);
   }
 
   /**
